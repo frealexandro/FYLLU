@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYLLU - Your Subscription Of Analytics Complete, Flexible And Accessible</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background: linear-gradient(135deg, #FFF 0%, #FFF 20%, #FFD580 50%, #FF6B35 100%);
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-space {
+            width: 50px;
+            height: 50px;
+            background-color: #ddd;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF6B35;
+        }
+        nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+        nav a {
+            margin-left: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .cta-button {
+            background-color: #FF6B35;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover, .cta-button:focus {
+            background-color: #193de0;
+        }
+        .cta-button:active {
+            background-color: #CC4E26;
+            color: #FFF;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 5%;
+            position: relative;
+        }
+        h1 {
+            font-size: 48px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .services {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #444;
+        }
+        .ship {
+            position: absolute;
+            width: 100px;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+        }
+        #ship1 { bottom: 15%; left: 5%; animation-delay: 0s; }
+        #ship2 { top: 30%; right: 5%; animation-delay: 3s; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .white-patch {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        #patch1 { width: 300px; height: 300px; top: 40%; left: -5%; }
+        #patch2 { width: 200px; height: 200px; bottom: 15%; right: 10%; }
+        #patch3 { width: 250px; height: 250px; top: 10%; right: -5%; }
+        #patch4 { width: 180px; height: 180px; bottom: 5%; left: 10%; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-space"></div>
+            <div class="logo-text">FYLLU</div>
+        </div>
+        <nav>
+            <a href="#">Servicios</a>
+            <a href="#">Portafolio</a>
+            <a href="#">Precios</a>
+            <a href="#">Preguntas frecuentes</a>
+            <a href="#">Clips</a>
+        </nav>
+        <a href="#" class="cta-button">Iniciar sesión</a>
+    </header>
+    <div class="hero">
+        <h1>Your Subscription Of Analytics<br>Complete, Flexible And Accessible</h1>
+        <p>Scale and delegate all your organization's data analysis operations with a reliable and hassle-free analytics service.</p>
+        <div class="services">
+            Business Intelligence | Machine Learning | Dashboards | Flow Automation | Artificial Intelligence
+        </div>
+        <a href="#" class="cta-button">Iniciar prueba gratis</a>
+        <p>Agenda una reunión y obtén 7 días gratis.</p>
+    </div>
+    <img src="https://i.imgur.com/pZxNPTb.png" alt="Ship 1" class="ship" id="ship1">
+    <img src="https://i.imgur.com/pZxNPTb.png" alt="Ship 2" class="ship" id="ship2">
+    <div class="white-patch" id="patch1"></div>
+    <div class="white-patch" id="patch2"></div>
+    <div class="white-patch" id="patch3"></div>
+    <div class="white-patch" id="patch4"></div>
+</body>
+</html>
