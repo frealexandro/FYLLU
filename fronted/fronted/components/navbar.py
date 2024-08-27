@@ -1,12 +1,27 @@
 import reflex as rx
-import link_bio.styles.styles as styles
-from link_bio.routes import Route
-from link_bio.styles.styles import Size
-from link_bio.styles.colors import Color
+import fronted.styles.styles as styles
+
+#from fornted.routes import Route
+
+from fronted.styles.styles import Size
+from fronted.styles.colors import Color
+
+
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
+        rx.text(text, size="4", weight="medium",color=Color.PRIMARY.value,), href=url
+    )
+
+def service_item(icon: str, title: str, description: str) -> rx.Component:
+    return rx.flex(
+        rx.flex(
+            rx.text(icon, font_size="2em", margin_right="0.5em"),
+            rx.heading(title, size="sm"),
+            margin_bottom="0.5em",
+        ),
+        rx.text(description, font_size="sm", color="gray"),
+        direction="column",
     )
 
 
@@ -16,109 +31,151 @@ def navbar_dropdown() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
-                        width="2.25em",
+                        src="/fylluicon.png",
+                        width="3em",
                         height="auto",
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "Reflex", size="7", weight="bold"
+                        "FYLLU", size="7", weight="bold"
+                        
                     ),
                     align_items="center",
+                    spacing="3",
+                    margin_left="5em"
+
+                    
                 ),
                 rx.hstack(
-                    navbar_link("Home", "/#"),
                     rx.menu.root(
                         rx.menu.trigger(
                             rx.button(
                                 rx.text(
-                                    "Services",
+                                    "Servicios",
                                     size="4",
                                     weight="medium",
+                                    color=Color.PRIMARY.value,
                                 ),
                                 rx.icon("chevron-down"),
                                 weight="medium",
                                 variant="ghost",
                                 size="3",
+                                color=Color.PRIMARY.value,
+                                
+
                             ),
                         ),
                         rx.menu.content(
-                            rx.menu.item("Service 1"),
-                            rx.menu.item("Service 2"),
-                            rx.menu.item("Service 3"),
+                        rx.heading("Servicios", size="xl", margin_bottom="1em",bg = "#FAD6A5"),
+                        rx.grid(
+                            service_item("🖼️", "Diseño para redes sociales", "Contenido para Instagram, Meta, LinkedIn o TikTok"),
+                            service_item("🎨", "Diseño de marca", "Manuales de marca, logotipos, key visuals y activos de marca"),
+                            service_item("📊", "Diseño para anuncios digitales", "Anuncios de paid marketing para Google, Meta, X o TikTok"),
+                            service_item("✏️", "Diseño de ilustración", "Assets digitales, iconos, personajes y material de marketing ilustrado"),
+                            service_item("📑", "Diseño de presentaciones", "Decks, ebooks, one pagers y presentaciones comerciales"),
+                            service_item("📧", "Diseño de email", "Plantillas para email marketing, firmas y diseño para email"),
+                            service_item("🎬", "Edición de video", "Tutoriales, demos de productos, podcast o videos informativos"),
+                            service_item("🎭", "Animación 2D/3D", "Motion graphics, videos animados, demos de producto y animación 2D/3D"),
+                            service_item("🌐", "Diseño web", "Landing pages, sitios webs completos y plantillas de email marketing"),
+                            columns="3",
+                            spacing="5",
+                            color = Color.PRIMARY.value,
+                            bg = "#FAD6A5",
+                            border_style="solid",
+                            border_color="#FAD6A5",
                         ),
+                        width="800px",
+                        padding="1.5em",
+                        color=Color.PRIMARY.value,
+                        bg = "#FAD6A5",
+                    )
+                    
+                    
                     ),
-                    navbar_link("Pricing", "/#"),
-                    navbar_link("Contact", "/#"),
-                    justify="end",
-                    spacing="5",
+                    navbar_link("Portafolio", "/#"),
+                    navbar_link("Precios", "/#"),
+                    navbar_link("Preguntas frecuentes", "/#"),
+                    navbar_link("Clips", "/#"),
+                    spacing="6",
+                    
                 ),
-                justify="between",
-                align_items="center",
-            ),
-        ),
-        rx.mobile_and_tablet(
-            rx.hstack(
                 rx.hstack(
-                    rx.image(
-                        src="/logo.jpg",
-                        width="2em",
-                        height="auto",
-                        border_radius="25%",
+                    rx.button(
+                        "Iniciar sesión",
+                        size="3",
+                        variant="outline",
+                        color=Color.PRIMARY.value,
                     ),
-                    rx.heading(
-                        "Reflex", size="6", weight="bold"
-                    ),
-                    align_items="center",
-                ),
-                rx.menu.root(
-                    rx.menu.trigger(
-                        rx.icon("menu", size=30)
-                    ),
-                    rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.sub(
-                            rx.menu.sub_trigger("Services"),
-                            rx.menu.sub_content(
-                                rx.menu.item("Service 1"),
-                                rx.menu.item("Service 2"),
-                                rx.menu.item("Service 3"),
-                            ),
-                        ),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
-                        rx.menu.item("Contact"),
-                    ),
+                    rx.button("Comenzar prueba gratis", size="3", color=Color.PRIMARY.value),
+                    spacing="6",
                     justify="end",
                 ),
                 justify="between",
                 align_items="center",
             ),
-        ),
-        bg=rx.color("accent", 3),
+        bg= Color.CONTENT.value,
         padding="1em",
-        # position="fixed",
-        # top="0px",
-        # z_index="5",
         width="100%",
-    )
+        ),)
+
+
+
+
+
 
 
 #*ejemplo mouredev
-def navbar() -> rx.Component:
-    return rx.hstack(
-        rx.link(
-            rx.box(
-                rx.text("moure", as_="span", color=Color.PRIMARY.value),
-                rx.text("dev", as_="span", color=Color.SECONDARY.value),
-                style=styles.navbar_title_style
-            ),
-            href=Route.INDEX.value
-        ),
-        position="sticky",
-        bg=Color.CONTENT.value,
-        padding_x=Size.BIG.value,
-        padding_y=Size.DEFAULT.value,
-        z_index="999",
-        top="0"
-    )
+#def navbar() -> rx.Component:
+#    return rx.hstack(
+#        rx.link(
+    #         rx.box(
+    #             rx.text("moure", as_="span", color=Color.PRIMARY.value),
+    #             rx.text("dev", as_="span", color=Color.SECONDARY.value),
+    #             style=styles.navbar_title_style
+    #         ),
+    #         href=Route.INDEX.value
+    #     ),
+    #     position="sticky",
+    #     bg=Color.CONTENT.value,
+    #     padding_x=Size.BIG.value,
+    #     padding_y=Size.DEFAULT.value,
+    #     z_index="999",
+    #     top="0"
+    # )
+
+            # rx.mobile_and_tablet(
+        #     rx.hstack(
+        #         rx.hstack(
+        #             rx.image(
+        #                 src="/fylluicon.png",
+        #                 width="2em",
+        #                 height="auto",
+        #                 border_radius="25%",
+        #             ),
+        #             rx.heading(
+        #                 "Reflex", size="6", weight="bold"
+        #             ),
+        #             align_items="center",
+        #         ),
+        #         rx.menu.root(
+        #             rx.menu.trigger(
+        #                 rx.icon("menu", size=30)
+        #             ),
+        #             rx.menu.content(
+        #                 rx.menu.item("Servicios"),
+        #                 rx.menu.item("Portafolio"),
+        #                 rx.menu.item("Precios"),
+        #                 rx.menu.item("Preguntas frecuentes"),
+        #                 rx.menu.separator("Clips"),
+        #                 rx.menu.separator(),
+        #                 rx.menu.item("Iniciar sesión"),
+        #                 rx.menu.item("Comenzar prueba gratis"),
+        #             ),
+        #             justify="end",
+        #         ),
+        #         justify="between",
+        #         align_items="center",
+        #     ),
+        # ),
+        
+    #)
