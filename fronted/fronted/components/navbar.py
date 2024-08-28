@@ -1,10 +1,31 @@
 import reflex as rx
 import fronted.styles.styles as styles
-
-#from fornted.routes import Route
-
 from fronted.styles.styles import Size
-from fronted.styles.colors import Color
+from fronted.styles.colors import Color , TextColor
+
+
+
+
+
+
+
+
+
+styles = {
+    "button": {
+        "background_color": "#0099ff",
+        "color": "black",
+        "font_weight": "italic",
+        "padding": "1.2rem 0.6rem",
+        "size" : "3",
+        "font_size": "1.125rem",
+        "transition": "background-color 300ms",
+        "_hover": {
+            "background_color": "#FF00FF",
+        },},}
+
+
+
 
 
 
@@ -17,12 +38,13 @@ def service_item(icon: str, title: str, description: str) -> rx.Component:
     return rx.flex(
         rx.flex(
             rx.text(icon, font_size="2em", margin_right="0.5em"),
-            rx.heading(title, size="sm"),
+            rx.heading(title, size="xs"),
             margin_bottom="0.5em",
         ),
-        rx.text(description, font_size="sm", color="gray"),
+        rx.text(description, font_size="xs", color="black"),
         direction="column",
     )
+
 
 
 def navbar_dropdown() -> rx.Component:
@@ -37,7 +59,7 @@ def navbar_dropdown() -> rx.Component:
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "FYLLU", size="7", weight="bold"
+                        "FYLLU", size="7", weight="bold" , color=Color.PRIMARY.value,
                         
                     ),
                     align_items="center",
@@ -66,28 +88,28 @@ def navbar_dropdown() -> rx.Component:
                             ),
                         ),
                         rx.menu.content(
-                        rx.heading("Servicios", size="xl", margin_bottom="1em",bg = "#FAD6A5"),
+                        rx.heading("Servicios", size="x0.5", margin_bottom="1em",bg = "#FFFFFF", color="black"),
                         rx.grid(
-                            service_item("🖼️", "Diseño para redes sociales", "Contenido para Instagram, Meta, LinkedIn o TikTok"),
-                            service_item("🎨", "Diseño de marca", "Manuales de marca, logotipos, key visuals y activos de marca"),
-                            service_item("📊", "Diseño para anuncios digitales", "Anuncios de paid marketing para Google, Meta, X o TikTok"),
-                            service_item("✏️", "Diseño de ilustración", "Assets digitales, iconos, personajes y material de marketing ilustrado"),
-                            service_item("📑", "Diseño de presentaciones", "Decks, ebooks, one pagers y presentaciones comerciales"),
-                            service_item("📧", "Diseño de email", "Plantillas para email marketing, firmas y diseño para email"),
-                            service_item("🎬", "Edición de video", "Tutoriales, demos de productos, podcast o videos informativos"),
-                            service_item("🎭", "Animación 2D/3D", "Motion graphics, videos animados, demos de producto y animación 2D/3D"),
-                            service_item("🌐", "Diseño web", "Landing pages, sitios webs completos y plantillas de email marketing"),
+                            service_item("📊", "Dashboards Interactivos", "Visualizaciones de datos personalizadas y en tiempo real para una toma de decisiones ágil"),
+                            service_item("🔍", "Análisis Predictivo", "Modelos de machine learning para prever tendencias y comportamientos futuros"),
+                            service_item("🔄", "Automatización de Procesos", "Flujos de trabajo automatizados para optimizar operaciones y reducir errores"),
+                            service_item("📈", "Análisis de Rendimiento", "Métricas clave y KPIs personalizados para evaluar y mejorar el desempeño del negocio"),
+                            service_item("🕸️", "Web Scraping Avanzado", "Recolección y procesamiento de datos web para obtener insights del mercado"),
+                            service_item("🧠", "Integración GEN-AI", "Implementación de IA generativa para análisis avanzado de datos y automatización inteligente de flujos de trabajo"),
+                            service_item("📱", "Analítica Móvil", "Seguimiento y análisis de comportamiento de usuarios en aplicaciones móviles"),
+                            service_item("🔗", "Integración de Datos", "Unificación de fuentes de datos dispares para una visión holística del negocio"),
+                            service_item("🛒", "Análisis de Conversión", "Optimización del embudo de ventas mediante análisis detallado del comportamiento del cliente"),
                             columns="3",
                             spacing="5",
-                            color = Color.PRIMARY.value,
-                            bg = "#FAD6A5",
+                            color = "black",
+                            bg = "#FFFFFF",
                             border_style="solid",
                             border_color="#FAD6A5",
                         ),
                         width="800px",
                         padding="1.5em",
                         color=Color.PRIMARY.value,
-                        bg = "#FAD6A5",
+                        bg = "#FFFFFF",
                     )
                     
                     
@@ -106,76 +128,17 @@ def navbar_dropdown() -> rx.Component:
                         variant="outline",
                         color=Color.PRIMARY.value,
                     ),
-                    rx.button("Comenzar prueba gratis", size="3", color=Color.PRIMARY.value),
+                    rx.button("Comenzar prueba gratis", style=styles["button"]),
                     spacing="6",
                     justify="end",
                 ),
                 justify="between",
                 align_items="center",
             ),
-        bg= Color.CONTENT.value,
+        bg= "#FFBE76",
         padding="1em",
         width="100%",
         ),)
 
 
 
-
-
-
-
-#*ejemplo mouredev
-#def navbar() -> rx.Component:
-#    return rx.hstack(
-#        rx.link(
-    #         rx.box(
-    #             rx.text("moure", as_="span", color=Color.PRIMARY.value),
-    #             rx.text("dev", as_="span", color=Color.SECONDARY.value),
-    #             style=styles.navbar_title_style
-    #         ),
-    #         href=Route.INDEX.value
-    #     ),
-    #     position="sticky",
-    #     bg=Color.CONTENT.value,
-    #     padding_x=Size.BIG.value,
-    #     padding_y=Size.DEFAULT.value,
-    #     z_index="999",
-    #     top="0"
-    # )
-
-            # rx.mobile_and_tablet(
-        #     rx.hstack(
-        #         rx.hstack(
-        #             rx.image(
-        #                 src="/fylluicon.png",
-        #                 width="2em",
-        #                 height="auto",
-        #                 border_radius="25%",
-        #             ),
-        #             rx.heading(
-        #                 "Reflex", size="6", weight="bold"
-        #             ),
-        #             align_items="center",
-        #         ),
-        #         rx.menu.root(
-        #             rx.menu.trigger(
-        #                 rx.icon("menu", size=30)
-        #             ),
-        #             rx.menu.content(
-        #                 rx.menu.item("Servicios"),
-        #                 rx.menu.item("Portafolio"),
-        #                 rx.menu.item("Precios"),
-        #                 rx.menu.item("Preguntas frecuentes"),
-        #                 rx.menu.separator("Clips"),
-        #                 rx.menu.separator(),
-        #                 rx.menu.item("Iniciar sesión"),
-        #                 rx.menu.item("Comenzar prueba gratis"),
-        #             ),
-        #             justify="end",
-        #         ),
-        #         justify="between",
-        #         align_items="center",
-        #     ),
-        # ),
-        
-    #)

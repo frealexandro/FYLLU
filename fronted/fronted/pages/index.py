@@ -23,11 +23,15 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                max_width=styles.MAX_WIDTH,
+                
                 width="100%",
-                margin_y=Size.BIG.value,
-                padding=Size.BIG.value
-            )
+                
+                
+            ),
+            style={
+            # Asegura que el contenedor ocupe toda la altura de la ventana
+                "width": "100%",    # Asegura que el contenedor ocupe todo el ancho de la ventana
+            }
         ),
         bg = styles.Color.BACKGROUND.value,
         height="100vh",  # Asegura que el contenedor ocupe toda la altura de la ventana

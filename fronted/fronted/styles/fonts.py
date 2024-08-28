@@ -9,4 +9,4 @@ class Font(Enum):
 
 class FontWeight(Enum):
     LIGHT = "300"
-    MEDIUM = "500"
+    MEDIUM = "600"

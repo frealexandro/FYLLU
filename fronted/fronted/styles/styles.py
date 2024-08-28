@@ -4,7 +4,7 @@ from .colors import Color, TextColor
 from .fonts import Font, FontWeight
 
 # Constants
-MAX_WIDTH = "560px"
+MAX_WIDTH = "2000px"
 FADEIN_ANIMATION = "animate__animated animate__fadeIn"
 BOUNCEIN_ANIMATION = "animate__animated animate__bounceIn"
 
@@ -28,3 +28,5 @@ class Spacing(Enum):
     BIG = "6"
     MEDIUM_BIG = "7"
     VERY_BIG = "9"
+
+
