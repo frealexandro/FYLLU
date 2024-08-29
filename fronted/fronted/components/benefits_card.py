@@ -22,6 +22,8 @@ def cta_card():
         position="relative",
         overflow="hidden",
         padding="115px",
+        transition= "background-color 300ms",
+        _hover={"border": "2px solid #B87333"},
     )
 
 def benefit_card(title: str, description: str):
@@ -38,7 +40,7 @@ def benefit_card(title: str, description: str):
             "borderRadius": "5px",
              "transition": "background-color 300ms",
         "_hover": {
-            "border": "2px solid #FF00FF",}}
+            "border": "2px solid #B87333",}}
     )
 
 def benefits():
