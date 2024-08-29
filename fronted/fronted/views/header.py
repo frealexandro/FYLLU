@@ -17,14 +17,14 @@ from fronted.components.main_content import main_content
 # Main App
 def header():
     return rx.box(
-        moving_hat("2rem", "2", "8rem"),
-        moving_hat("20rem", "0", "8rem", "10rem"),
-        moving_hat("10rem", "0", "8rem", "70rem"),
+        #moving_hat("2rem", "2", "8rem"),
+        #moving_hat("20rem", "0", "8rem", "10rem"),
+        #moving_hat("10rem", "0", "8rem", "70rem"),
         main_content(),
         style={
             "min_height": ["50vh", "60vh", "70vh"],
             "width": "100%",
-            "background": "radial-gradient(at 50% 40%, #FFBE76 100px, #FFBE76 30%, white 80%)",
+            "background": "radial-gradient(at 50% 40%, #FFBE76 100px, #FFBE76 30%, #FAFAFA 70%)",
             "overflow": "hidden",
             "position": "relative",
         },

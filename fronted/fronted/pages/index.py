@@ -6,6 +6,7 @@ from fronted.components.navbar import navbar_dropdown
 #from link_bio.components.footer import footer
 
 from fronted.views.header import header
+from fronted.views.content import content
 
 #from link_bio.views.index_links import index_links
 #from link_bio.views.sponsors import sponsors
@@ -16,6 +17,7 @@ from fronted.styles.styles import Size
     title=utils.index_title,
     description=utils.index_description,
 )
+
 def index() -> rx.Component:
     return rx.box(
         utils.lang(),
@@ -23,18 +25,20 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                
-                width="100%",
-                
-                
+                content(),
+
+                style={
+                    "flex": "1",  # Permite que el vstack ocupe el espacio disponible
+                    "display": "flex",
+                    "flexDirection": "column",
+                    "justifyContent": "center",  # Centrar verticalmente
+                    "alignItems": "center",  # Centrar horizontalmente
+                    "width": "100%",  # Asegura que el contenedor ocupe todo el ancho de la ventana
+                }
             ),
             style={
-            # Asegura que el contenedor ocupe toda la altura de la ventana
-                "width": "100%",    # Asegura que el contenedor ocupe todo el ancho de la ventana
+                "width": "100%",
+                "bg": "#FAFAFA"  # Asegura que el contenedor ocupe todo el ancho de la ventana
             }
-        ),
-        bg = styles.Color.BACKGROUND.value,
-        height="100vh",  # Asegura que el contenedor ocupe toda la altura de la ventana
-        width="100%",
-        #footer()
+        )
     )

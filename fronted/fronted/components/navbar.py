@@ -59,7 +59,7 @@ def navbar_dropdown() -> rx.Component:
                         border_radius="25%",
                     ),
                     rx.heading(
-                        "FYLLU", size="7", weight="bold" , color=Color.PRIMARY.value,
+                        "RandIA", size="7", weight="bold" , color=Color.PRIMARY.value,
                         
                     ),
                     align_items="center",
@@ -100,7 +100,7 @@ def navbar_dropdown() -> rx.Component:
                             service_item("🔗", "Integración de Datos", "Unificación de fuentes de datos dispares para una visión holística del negocio"),
                             service_item("🛒", "Análisis de Conversión", "Optimización del embudo de ventas mediante análisis detallado del comportamiento del cliente"),
                             columns="3",
-                            spacing="5",
+                            spacing="3",
                             color = "black",
                             bg = "#FFFFFF",
                             border_style="solid",
