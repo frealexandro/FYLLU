@@ -7,6 +7,7 @@ from fronted.components.navbar import navbar_dropdown
 
 from fronted.views.header import header
 from fronted.views.content import content
+from fronted.views.prices import prices
 
 #from link_bio.views.index_links import index_links
 #from link_bio.views.sponsors import sponsors
@@ -26,6 +27,7 @@ def index() -> rx.Component:
             rx.vstack(
                 header(),
                 content(),
+                prices(),
 
                 style={
                     "flex": "1",  # Permite que el vstack ocupe el espacio disponible
