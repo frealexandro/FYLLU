@@ -8,15 +8,19 @@ from fronted.components.navbar import navbar_dropdown
 from fronted.views.header import header
 from fronted.views.content import content
 from fronted.views.prices import prices
+from fronted.views.footer import footer
 
 #from link_bio.views.index_links import index_links
 #from link_bio.views.sponsors import sponsors
 from fronted.styles.styles import Size
 
 
+
+
 @rx.page(
     title=utils.index_title,
     description=utils.index_description,
+    
 )
 
 def index() -> rx.Component:
@@ -28,6 +32,8 @@ def index() -> rx.Component:
                 header(),
                 content(),
                 prices(),
+                footer(),
+
 
                 style={
                     "flex": "1",  # Permite que el vstack ocupe el espacio disponible

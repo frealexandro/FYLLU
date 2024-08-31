@@ -2,7 +2,7 @@ import reflex as rx
 import datetime
 import fronted.constants as const
 #from fronted.components.moving_hat import moving_hat
-from fronted.components.prices import pricing_final
+from fronted.components.prices import pricing_final , title_prices
 #from fronted.styles.styles import Size, Spacing
 #from fronted.styles.colors import Color, TextColor
 
@@ -17,15 +17,16 @@ from fronted.components.prices import pricing_final
 # Main App
 def prices():
     return rx.box(
-        #moving_hat("2rem", "2", "8rem"),
-        #moving_hat("20rem", "0", "8rem", "10rem"),
-        #moving_hat("10rem", "0", "8rem", "70rem"),
+        title_prices(),
         pricing_final(),
         style={
-            "min_height": ["50vh", "60vh", "70vh"],
+            "min_height": ["120vh", "140vh", "160vh"],
             "width": "100%",
-            "background": "radial-gradient(at 50% 40%, #FFBE76 100px, #FFBE76 30%, #FAFAFA 70%)",
+            "background": "linear-gradient(#FAFAFA  0.1%, #B87333 90%)",
+            #"width":"20%",
+            #"height":"100%",
             "overflow": "hidden",
             "position": "relative",
+            "margin_top":"10em",
         },
     )
