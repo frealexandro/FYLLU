@@ -27,26 +27,17 @@ def index() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar_dropdown(),
-        rx.center(
+        rx.vstack(
             rx.vstack(
                 header(),
                 content(),
                 prices(),
-                footer(),
-
-
-                style={
-                    "flex": "1",  # Permite que el vstack ocupe el espacio disponible
-                    "display": "flex",
-                    "flexDirection": "column",
-                    "justifyContent": "center",  # Centrar verticalmente
-                    "alignItems": "center",  # Centrar horizontalmente
-                    "width": "100%",  # Asegura que el contenedor ocupe todo el ancho de la ventana
-                }
+                width="100%",
+                background_color="#FAFAFA",
+                
             ),
-            style={
-                "width": "100%",
-                "bg": "#FAFAFA"  # Asegura que el contenedor ocupe todo el ancho de la ventana
-            }
-        )
-    )
+        ),
+        footer(),  # Movido dentro del vstack principal
+        width="100%",
+        align_items="stretch",
+       )

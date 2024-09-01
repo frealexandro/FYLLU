@@ -54,7 +54,7 @@ def navbar_dropdown() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/fylluicon.png",
+                        src="/RandIA-negro-logo.png",
                         width="3em",
                         height="auto",
                         border_radius="25%",

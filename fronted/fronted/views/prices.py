@@ -22,7 +22,7 @@ def prices():
         style={
             "min_height": ["120vh", "140vh", "160vh"],
             "width": "100%",
-            "background": "linear-gradient(#FAFAFA  0.1%, #B87333 90%)",
+            "background": "linear-gradient(#FAFAFA  0.1%, #FFBE76 90%)",
             #"width":"20%",
             #"height":"100%",
             "overflow": "hidden",
