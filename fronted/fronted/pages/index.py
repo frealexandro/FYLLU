@@ -3,15 +3,12 @@ import fronted.utils as utils
 import fronted.styles.styles as styles
 from fronted.components.navbar import navbar_dropdown
 
-#from link_bio.components.footer import footer
 
 from fronted.views.header import header
 from fronted.views.content import content
 from fronted.views.prices import prices
 from fronted.views.footer import footer
 
-#from link_bio.views.index_links import index_links
-#from link_bio.views.sponsors import sponsors
 from fronted.styles.styles import Size
 
 

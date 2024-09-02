@@ -91,7 +91,7 @@ def pricing_final():
                 content_card(
                     "Básico",
                     "50 créditos por mes",
-                    "$790",
+                    "550",
                     "1 Proyecto activo a la vez",
                     "Flujos de automatización básicos",
                     "Dashboards interactivos predefinidos",
@@ -109,7 +109,7 @@ def pricing_final():
                 content_card(
                     "Profesional",
                     "70 créditos por mes",
-                    "$1200",
+                    "$750",
                     "2 Proyecto activo a la vez",
                     "Modelos de IA predefinidos",
                     "Flujos de automatización avanzados",
@@ -123,7 +123,7 @@ def pricing_final():
                 content_card(
                     "Empresarial",
                     "100 créditos por mes",
-                    "$1500",
+                    "$1090",
                     "3 Proyecto activo a la vez",
                     "Modelos de IA personalizados",
                     "Arquitectura de datos personalizada",
