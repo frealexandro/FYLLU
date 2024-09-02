@@ -3,6 +3,7 @@ from typing import List
 from fronted.styles.styles import Size, Spacing
 from fronted.styles.colors import Color, TextColor
 from fronted.styles.fonts import Font, FontWeight
+from fronted.routes import Route
 
 # Styles
 styles = {
@@ -58,7 +59,8 @@ def main_content():
                 style=styles["text_container"],
                 text_align="center",
             ),
-            rx.button("Comenzar prueba gratis", style=styles["button"]),
+            rx.button("Comenzar prueba gratis", style=styles["button"],on_click=rx.redirect(Route.FUNNEL.value),
+                    external=True,),
             rx.text("Agenda una reunión y obtén 7 días gratis.", font_size="sm", margin_top="1rem", color="black",font_family="Comic Sans MS"),
             align_items="center",
             width="100%",

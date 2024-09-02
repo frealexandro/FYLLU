@@ -2,6 +2,12 @@ import reflex as rx
 import fronted.styles.styles as styles
 from fronted.styles.styles import Size
 from fronted.styles.colors import Color , TextColor
+import fronted.constants as const
+from fronted.routes import Route
+
+
+# def redirect_to_free_trial():
+#     return redirect(Route.FUNNEL.value)
 
 
 
@@ -58,9 +64,17 @@ def navbar_dropdown() -> rx.Component:
                         width="3em",
                         height="auto",
                         border_radius="25%",
+                        on_click=rx.redirect(Route.INDEX.value),
+                        external=True,
                     ),
                     rx.heading(
-                        "RandIA", size="7", weight="bold" , color=Color.PRIMARY.value, font_family="Comic Sans MS"
+                        "RandIA", 
+                        size="7", 
+                        weight="bold", 
+                        color=Color.PRIMARY.value, 
+                        font_family="Comic Sans MS",
+                        on_click=rx.redirect(Route.INDEX.value), 
+                        external=True,
                         
                     ),
                     align_items="center",
@@ -116,24 +130,26 @@ def navbar_dropdown() -> rx.Component:
                     
                     
                     ),
-                    navbar_link("Portafolio", "/#"),
-                    navbar_link("Precios", "/#"),
-                    navbar_link("Preguntas frecuentes", "/#"),
-                    navbar_link("Clips", "/#"),
+                    #navbar_link("Portafolio", "/#"),
+                    navbar_link("Precios", "/#prices"),#on_click = rx.redirect("/#prices")
+                    navbar_link("Preguntas frecuentes", "/#preguntas_frecuentes"),
+                    #navbar_link("Clips", "/#"),
                     spacing="6",
                     
                 ),
                 rx.hstack(
-                    rx.button(
-                        "Iniciar sesión",
-                        size="3",
-                        variant="outline",
-                        color=Color.PRIMARY.value,
-                        font_family="Comic Sans MS"
-                    ),
+                    #rx.button(
+                    #    "Iniciar sesión",
+                    #    size="3",
+                    #    variant="outline",
+                    #    color=Color.PRIMARY.value,
+                    #    font_family="Comic Sans MS"
+                    #),
                     rx.button("Comenzar prueba gratis", style=styles["button"]),
                     spacing="6",
                     justify="end",
+                    on_click=rx.redirect(Route.FUNNEL.value),
+                    external=True,
                 ),
                 justify="between",
                 align_items="center",
@@ -144,4 +160,15 @@ def navbar_dropdown() -> rx.Component:
         ),)
 
 
-
+#!EXAMPLE TO NEW ROUTE 
+# def index_links() -> rx.Component:
+#     return rx.vstack(
+#         title("Comunidad"),
+#         link_button(
+#             "Cursos gratis",
+#             "Consulta mis tutoriales para aprender programación",
+#             "/icons/code.svg",
+#             Route.COURSES.value,
+#             False,
+#             Color.SECONDARY.value
+#         ),

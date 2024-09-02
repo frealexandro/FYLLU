@@ -1,15 +1,20 @@
 import reflex as rx
 
 
-#font_family="Comic Sans MS"
-
 def cta_card():
     return rx.box(
         rx.vstack(
-            rx.heading("¡Desbloquea tu operación de analitycs ahora!", size="2xl", font_weight="bold", mb="4", color ="black", font_family="Comic Sans MS"),
-            rx.text("Descubre cómo RandIA puede integrarse perfectamente en tus procesos, potenciando tu creatividad y aliviando tu carga de trabajo.", mb="6", color="black", font_family="Comic Sans MS"),
+            rx.heading("¡Desbloquea tu operación de analitycs ahora!", 
+                       size="2xl", font_weight="bold", mb="4", 
+                       color ="black", font_family="Comic Sans MS"),
+                       
+            rx.text("Descubre cómo RandIA puede integrarse perfectamente en tus procesos, potenciando tu creatividad y aliviando tu carga de trabajo.", 
+                    mb="6", color="black", font_family="Comic Sans MS"),
             
-            rx.button("Ver planes", bg="#0099ff", color="black",  transition = "background-color 300ms",_hover={"bg": "#FF00FF"}),
+            rx.button("Ver planes", bg="#0099ff", color="black",  
+                      transition = "background-color 300ms",_hover={"bg": "#FF00FF"}),on_click = rx.redirect("/#prices"),
+            
+            
             align_items="start",
             z_index="10",
             

@@ -2,6 +2,7 @@
 from rxconfig import config
 import reflex as rx
 from fronted.pages.index import index
+from fronted.pages.funnel_ventas import funnel_ventas
 import fronted.styles.styles as styles
 
 
@@ -9,3 +10,5 @@ import fronted.styles.styles as styles
 # Create app instance and add index page.
 app = rx.App()
 app.add_page(index)
+app.add_page(funnel_ventas)
+

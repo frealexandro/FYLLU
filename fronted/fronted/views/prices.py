@@ -18,13 +18,14 @@ from fronted.components.prices import pricing_final , title_prices
 def prices():
     return rx.box(
         title_prices(),
+        
         pricing_final(),
+        id="prices",
+        
         style={
             "min_height": ["120vh", "140vh", "160vh"],
             "width": "100%",
             "background": "linear-gradient(#FAFAFA  0.1%, #FFBE76 90%)",
-            #"width":"20%",
-            #"height":"100%",
             "overflow": "hidden",
             "position": "relative",
             "margin_top":"10em",

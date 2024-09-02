@@ -1,4 +1,5 @@
 import reflex as rx
+from fronted.routes import Route
 
 
 
@@ -35,7 +36,7 @@ def price_component(price:str):
 def icon_price(icon: str, text: str):
     return rx.flex(
         rx.icon(icon, size=25, color="#0099ff"),
-        rx.text(text, font_family="Comic Sans MS"),
+        rx.text(text, font_family="Comic Sans MS",color="black"),
         direction="row",
         gap="1",
         aling="center",
@@ -57,7 +58,8 @@ def content_card(title: str, credits_text: str, price: str , condition_1: str,
         rx.text (professional_1, font_family="Comic Sans MS"),
         rx.text (professional_2, font_family="Comic Sans MS"),
         rx.text(type_sopport, font_family="Comic Sans MS"),
-        rx.button("Comenzar prueba gratis", style=styles["button"]),
+        rx.button("Comenzar prueba gratis", style=styles["button"],on_click=rx.redirect(Route.FUNNEL.value),
+                    external=True,),
                     
 
         
@@ -95,7 +97,7 @@ def pricing_final():
                     "Dashboards interactivos predefinidos",
                     "1 Project Manager",
                     "1 Data Director",
-                    "Equipo de diseño dedicado"
+                    "Equipo de data dedicado"
 
 
 
@@ -113,7 +115,7 @@ def pricing_final():
                     "Flujos de automatización avanzados",
                     "1 Project Manager",
                     "1 Data Director",
-                    "Equipo de diseño dedicado"
+                    "Equipo de data dedicado"
                 ),
                 margin="1px", 
             ),
@@ -127,7 +129,7 @@ def pricing_final():
                     "Arquitectura de datos personalizada",
                     "1 Project Manager",
                     "1 Data Director",
-                    "Equipo de diseño dedicado"
+                    "Equipo de data dedicado"
                 ),
                 margin_right="200px", 
 

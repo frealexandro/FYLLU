@@ -25,6 +25,8 @@ def footer():
         ),
         width="100%",
         background="black",
-        padding="4",  # Añade un poco de padding alrededor del footer
+        padding="4",
+        id="preguntas_frecuentes",  # Añade un ID para poder enlazar con el botón del footer
+          # Añade un poco de padding alrededor del footer
     )
 
