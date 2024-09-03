@@ -4,7 +4,7 @@ config = rx.Config(
     app_name="fronted",
     cors_allowed_origins = [
         "http://localhost:3000",
-        "https://randia.io",
+        "https://www.randia.io",
     ],
     tailwind={
         "theme": {
