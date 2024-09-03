@@ -9,6 +9,5 @@ import fronted.styles.styles as styles
 
 # Create app instance and add index page.
 app = rx.App()
-app.add_page(index)
-app.add_page(funnel_ventas)
+
 

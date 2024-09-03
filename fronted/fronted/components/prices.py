@@ -45,7 +45,7 @@ def icon_price(icon: str, text: str):
 
 
 def content_card(title: str, credits_text: str, price: str , condition_1: str, 
-                 condition_2: str, condition_3: str, professional_1: str , professional_2: str, type_sopport: str):
+                 condition_2: str, condition_3: str, type_sopport: str):
     return rx.vstack(
         rx.heading(title, size="10", font_family="Comic Sans MS", mb="2", text_align="center", color="#0099ff"),
         price_component(price=price),
@@ -55,8 +55,10 @@ def content_card(title: str, credits_text: str, price: str , condition_1: str,
         icon_price("dot", condition_2),
         icon_price("dot", condition_3),
         rx.heading("UN EQUIPO COMPUESTO POR" , font_family="Comic Sans MS", text_align="center" ,mb="2",size="2", color="#0099ff"),
-        rx.text (professional_1, font_family="Comic Sans MS"),
-        rx.text (professional_2, font_family="Comic Sans MS"),
+        
+        
+        #rx.text (professional_1, font_family="Comic Sans MS"),
+        #rx.text (professional_2, font_family="Comic Sans MS"),
         rx.text(type_sopport, font_family="Comic Sans MS"),
         rx.button("Comenzar prueba gratis", style=styles["button"],on_click=rx.redirect(Route.FUNNEL.value),
                     external=True,),
@@ -95,8 +97,8 @@ def pricing_final():
                     "1 Proyecto activo a la vez",
                     "Flujos de automatización básicos",
                     "Dashboards interactivos predefinidos",
-                    "1 Project Manager",
-                    "1 Data Director",
+                    #"1 Project Manager",
+                    #"1 Data Director",
                     "Equipo de data dedicado"
 
 
@@ -113,8 +115,8 @@ def pricing_final():
                     "2 Proyecto activo a la vez",
                     "Modelos de IA predefinidos",
                     "Flujos de automatización avanzados",
-                    "1 Project Manager",
-                    "1 Data Director",
+                    #"1 Project Manager",
+                    #"1 Data Director",
                     "Equipo de data dedicado"
                 ),
                 margin="1px", 
@@ -127,8 +129,8 @@ def pricing_final():
                     "3 Proyecto activo a la vez",
                     "Modelos de IA personalizados",
                     "Arquitectura de datos personalizada",
-                    "1 Project Manager",
-                    "1 Data Director",
+                    #"1 Project Manager",
+                    #"1 Data Director",
                     "Equipo de data dedicado"
                 ),
                 margin_right="200px", 
