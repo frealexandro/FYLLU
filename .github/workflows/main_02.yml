@@ -3,7 +3,7 @@ name: Static Build 02
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
