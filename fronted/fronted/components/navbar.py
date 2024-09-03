@@ -148,7 +148,7 @@ def navbar_dropdown() -> rx.Component:
                     rx.button("Comenzar prueba gratis", style=styles["button"]),
                     spacing="6",
                     justify="end",
-                    on_click=rx.redirect(f"www.randia.io{Route.FUNNEL.value}"),
+                    on_click=rx.redirect(Route.FUNNEL.value),
                     external=True,
                 ),
                 justify="between",
