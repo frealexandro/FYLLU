@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'frealexandro/RandIA/fronted'
+    if: github.repository == 'frealexandro/RandIA'
     runs-on: ubuntu-latest
 
     permissions:
