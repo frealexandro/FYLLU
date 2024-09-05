@@ -5,6 +5,7 @@ config = rx.Config(
     cors_allowed_origins = [
         "http://localhost:3000",
         "https://www.randia.io",
+        "https://randia.io",
     ],
     tailwind={
         "theme": {
