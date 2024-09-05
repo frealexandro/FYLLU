@@ -1,7 +1,7 @@
-import reflex as rx
+# import reflex as rx
 
 
-class Featured(rx.Base):
-    title: str
-    image: str
-    url: str
+# class Featured(rx.Base):
+#     title: str
+#     image: str
+#     url: str

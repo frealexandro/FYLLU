@@ -3,8 +3,6 @@ from fronted.components.prices import icon_price
 from fronted.api.SupabaseAPI import SupabaseAPI
 
 # Crear una instancia compartida de SupabaseAPI
-supabase_api = SupabaseAPI()
-
 
 
 class FormState(rx.State):
@@ -12,11 +10,12 @@ class FormState(rx.State):
 
     def handle_submit(self, form_data: dict):
         self.email = form_data.get("email", "")
-        self.save_to_supabase()
+        #self.save_to_supabase()
 
-    def save_to_supabase(self):
-        # Usar la instancia compartida de SupabaseAPI
-        supabase_api.save_email(self.email)
+    # def save_to_supabase(self):
+    #     # Usar la instancia compartida de SupabaseAPI
+    #     supabase_api = SupabaseAPI()
+    #     supabase_api.save_email(self.email)
 
 
 
