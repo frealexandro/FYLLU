@@ -5,7 +5,7 @@ pip install -r requirements.txt
 #requirements
 rm -rf public
 reflex init
-API_URL=https://api.randia.io/ reflex export --frontend-only
+API_URL=https://randia-production.up.railway.app/ reflex export --frontend-only
 unzip frontend.zip -d public
 rm -f frontend.zip
 deactivate
