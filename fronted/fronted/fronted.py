@@ -4,7 +4,7 @@ import reflex as rx
 from fronted.pages.index import index
 from fronted.pages.funnel_ventas import funnel_ventas
 import fronted.styles.styles as styles
-from fronted.api import api
+#from fronted.api import api
 
 
 
@@ -16,4 +16,3 @@ class State(rx.State):
 app = rx.App()
 
 
-app.api
