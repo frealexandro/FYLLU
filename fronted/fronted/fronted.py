@@ -14,4 +14,6 @@ import fronted.styles.styles as styles
 app = rx.App()
 app.add_page(index)
 app.add_page(funnel_ventas)
+
+
 #app.api.add_api_route("/featured", featured)
