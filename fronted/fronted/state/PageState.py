@@ -1,13 +1,13 @@
-# import reflex as rx
-# import fronted.utils as utils
-# from link_bio.api.api import live, featured, schedule
-# from link_bio.model.Featured import Featured
-# from link_bio.model.Live import Live
+import reflex as rx
+import fronted.utils as utils
+from fronted.api.api import live, featured, schedule
+from fronted.model.Featured import Featured
+#from fronted.model.Live import Live
 
-# USER = "mouredev"
+#USER = "mouredev"
 
 
-# class PageState(rx.State):
+class PageState(rx.State):
 
 #     timezone = ""
 #     live_status = Live(live=False, title="")
@@ -30,5 +30,5 @@
 #         self.timezone = timezone
 #         self.next_live = utils.next_date(await schedule(), self.timezone)
 
-#     async def featured_links(self):
-#         self.featured_info = await featured()
+    async def featured_links(self):
+        self.featured_info = await featured()

@@ -12,6 +12,6 @@ from fronted.api.api import featured
 # Create app instance and add index page.
 # Create app instance and add index page.
 app = rx.App()
-#app.add_page(index)
-#app.add_page(funnel_ventas)
+app.add_page(index)
+app.add_page(funnel_ventas)
 app.api.add_api_route("/featured", featured)
