@@ -1,13 +1,18 @@
-FROM python:3.11
+FROM python:3.11-slim
 
 WORKDIR /app
-COPY . .
 
-ENV VIRTUAL_ENV=/app/.venv_docker
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-RUN python3.11 -m venv $VIRTUAL_ENV
+COPY requirements.txt .
 
-RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD reflex run --env prod --backend-only #!ejecutar enproduccion solo el backend
+COPY . .
+
+RUN reflex init
+
+ENV PORT 8080
+
+EXPOSE 8080
+
+# Ejecutamos la aplicación completa
+CMD reflex run --env prod --port $PORT
