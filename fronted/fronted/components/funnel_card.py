@@ -10,7 +10,7 @@ class FormState(rx.State):
 
     def handle_submit(self, form_data: dict):
         self.email = form_data.get("email", "")
-        #self.save_to_supabase()
+        self.save_to_supabase()
 
     def save_to_supabase(self):
         # Usar la instancia compartida de SupabaseAPI
