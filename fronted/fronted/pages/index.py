@@ -8,6 +8,8 @@ from fronted.views.header import header
 from fronted.views.content import content
 from fronted.views.prices import prices
 from fronted.views.footer import footer
+from fronted.routes import Route
+
 
 from fronted.styles.styles import Size
 
@@ -15,6 +17,8 @@ from fronted.styles.styles import Size
 
 
 @rx.page(
+    
+    route = Route.INDEX.value,
     title=utils.index_title,
     description=utils.index_description,
     

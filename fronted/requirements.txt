@@ -1,3 +1,5 @@
+h2==4.1.0
 python-dotenv==1.0.1
 supabase==2.7.4
-reflex==0.5.10
+
+reflex==0.5.9
