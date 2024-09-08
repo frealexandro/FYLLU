@@ -1,0 +1,27 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Instalar dependencias del sistema, incluyendo unzip
+RUN apt-get update && apt-get install -y nodejs npm unzip curl
+
+# Copiar los archivos del proyecto
+COPY . .
+
+# Instalar dependencias de Python y actualizar Reflex
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    pip install reflex==0.5.10
+
+# Inicializar Reflex (esto instalará las dependencias del frontend)
+RUN reflex init
+
+# Construir el frontend y mover los archivos estáticos a /srv
+RUN reflex export --frontend-only --no-zip && mv .web/_static/* /srv/ && rm -rf .web
+
+# Exponer el puerto proporcionado por Google Cloud Run
+ENV PORT 8000
+EXPOSE 8000
+
+# Comando para ejecutar la aplicación
+CMD ["sh", "-c", "reflex run --env prod --port $PORT"]
